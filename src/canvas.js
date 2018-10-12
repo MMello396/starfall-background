@@ -331,7 +331,7 @@ function init() {
         stars.push(new Star(x, y, radius, color));
       }
 
-      for (let i = 0; i <= 1; i++){
+      for (let i = 0; i <= 0; i++){
         const radius = 15;
         let x = randomIntFromRange(radius, canvas.width - radius);
         let y = randomIntFromRange(radius, -(canvas.height - radius));
