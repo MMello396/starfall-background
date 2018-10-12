@@ -11,7 +11,7 @@ const mouse = {
     y: innerHeight / 2
 }
 
-const starColors = ['white','yellow','red','blue']
+const starColors = ['white','lightblue']
 const mountColors = ['#3g4045', '#3f3d51', '#4d6174', '#414b60']
 
 // Event Listeners
@@ -139,14 +139,11 @@ function Star(x,y,radius, color) {
   this.radius = radius;
   this.origRadius = radius;
   this.color = color;
-  this.minOpacity = 0;
-  this.maxOpacity = 1;
   this.opacity = Math.random();
   this.change = .01;
 
 
   this.update = function(){
-    this.opacity += .01
     this.draw();
   }
 
@@ -154,7 +151,7 @@ function Star(x,y,radius, color) {
       c.beginPath();
       c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
       c.save();
-      c.globalAlpha = .7 + (.2 * Math.sin(this.opacity));
+      c.globalAlpha = this.opacity;
       c.fillStyle = this.color;
       c.fill();
       c.restore();
@@ -313,7 +310,7 @@ function init() {
 
 
       for (let i = 0; i <= 350; i++){
-        const radius = 1;
+        const radius = randomIntFromRange(1,2);
         let x = randomIntFromRange(radius, canvas.width - radius);
         let y = randomIntFromRange(radius, canvas.height - radius);
         const color = randomColor(starColors);

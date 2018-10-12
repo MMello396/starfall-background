@@ -16,6 +16,10 @@ h1 {
   color: gray;
 }
 
+h2 {
+  color: gray;
+}
+
 ul.menu {
   list-style-type: none;
   margin: 0;
@@ -49,4 +53,8 @@ a.menu:hover {
 .active {
     background-color: gray;
     color: white;
+}
+
+article p {
+  color: white;
 }
